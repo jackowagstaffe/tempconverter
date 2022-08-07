@@ -10,7 +10,7 @@ class FahrenheitToCelsiusHandler
 {
     public function handle(Args $args, IO $io, Command $command)
     {
-        $valueToConvert = $args->getArgument('valueToConvert');
+        $valueToConvert = $args->getOption('value');
         $io->writeLine(TemperatureConverter::convertFahrenheitToCelsius($valueToConvert));
 
         return 0;

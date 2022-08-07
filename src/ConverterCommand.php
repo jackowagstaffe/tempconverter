@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Webmozart\Console\Api\Args\Format\Option;
 use Webmozart\Console\Config\DefaultApplicationConfig;
 use Webmozart\Console\Api\Args\Format\Argument;
 
@@ -17,12 +18,12 @@ class ConverterCommand extends DefaultApplicationConfig
             ->beginCommand('ftc')
                 ->setDescription('Convert a Fahrenheit value to Celsius')
                 ->setHandler(new FahrenheitToCelsiusHandler())
-                ->addArgument('valueToConvert', Argument::REQUIRED, 'The value which should be converted')
+                ->addOption('value', null, Option::REQUIRED_VALUE, 'The value which should be converted')
             ->end()
             ->beginCommand('ctf')
                 ->setDescription('Convert a Celsius value to Fahrenheit')
                 ->setHandler(new CelsiusToFahrenheitHandler())
-                ->addArgument('valueToConvert', Argument::REQUIRED, 'The value which should be converted')
+                ->addOption('value', null,  Option::REQUIRED_VALUE, 'The value which should be converted')
             ->end()
         ;
     }
