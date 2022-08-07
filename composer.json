@@ -11,6 +11,7 @@
     ],
     "require": {
         "webmozart/console": "~1.0@beta",
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.5"
     }
 }
